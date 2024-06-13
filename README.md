@@ -1,3 +1,5 @@
+${toc}
+
 # KMK-Mechanical-Keyboard
 This file serves to document my experience and process in making my first mechanical keyboard, mistakes and lessons included, for future reference when I inevitably build another one.
 
