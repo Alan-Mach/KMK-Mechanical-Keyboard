@@ -1,5 +1,3 @@
-${toc}
-
 # KMK-Mechanical-Keyboard
 This file serves to document my experience and process in making my first mechanical keyboard, mistakes and lessons included, for future reference when I inevitably build another one.
 
@@ -31,10 +29,27 @@ The budget also meant that my keyboard layout should use as many standard keys a
 With these considerations, I went on to making my keyboard layout.
 
 ## Layouts
-My layout was designed on the aptly named website [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/). This will allow me to experiment with as many layouts as I can digitally before I commit to one physically. 
-I started with an ANSI 104 preset as a base to make changes on (the keyboard layout most people think of).
+My layout was designed on the aptly-named website [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/). This will allow me to experiment with as many layouts as I can digitally before I commit to one physically. 
+I started with an ANSI 104 preset as a base to make changes from (the keyboard layout most people think of). 
+
+### v1
+Since a big feature of my keyboard is the left-hand numpad, I first moved the entire numpad and navigation keys to the other side. At this point in the process, I wanted the keyboard to have a windows where you could see the pcb through, so I made a new key in the layout the same size as the Pi Pico to figure out where it could go. Additionally, since I wanted media keys, I also added 3 custom media keys of Mute, Volume Down, and Volume Up (they are in that order because that's the order they are in on my current keyboard). 
+
+By default, the standard full-size layout needs 27 pins, but the Pi Pico has only 25 available. Since the entire numpad is needed, the navigation keys have to go, and the keys remaining have to be repositioned to reduce the number of columns (you can't remove rows since each row has too many keys). This isn't a big problem since no one actually uses keys like ScrollLock or PauseBreak anymore, and keys like PageUp and Down aren't used by me, so I elected to remove them. The remaining keys were organized into a column
+
+Next, I added the split into the keyboard. There is already a split keyboard layout within the hobby, the Alice layout. I chose not to use it since it requires 2 'B' keys and the crack half-way on each side left an unsightly gap; I couldn't have that, so my version will angle the entirety of each side by a single angle. Based on the standard touch-typing hand placement, the keys were split based on which keys *should* be pressed by the left and right hands. Both sides were then rotated to 6 degrees and spread apart. Since the right side had more keys, its keys ended up lower than the left side when looking at the middle most keys. This serendipitous as the uneven line-up allowed the keys to snuggle up closer to gether and reduce the split gap. Since the spacebar can't be broken, it had to be in the middle and have no angle. It also had to be lowered to accomodate the angling of the keys.
+
+The split left a large gap between the spacebar and the alt keys
 
 prioritozed compact layout over keycap compatability due to microcontroller pins
+
+![Layout 1](keyboard layouts/images/Keyboard_Layout_v1.png)
+
+![Layout 2](keyboard layouts/images/Keyboard_Layout_v2.png)
+
+![Layout 3](keyboard layouts/images/Keyboard_Layout_v3.png)
+
+![Layout 4](keyboard layouts/images/Keyboard_Layout_v4.png)
 
 # 2. Finding Parts
 After watching many handwired keyboard videos, I have determined the minimum list of parts that I need:
