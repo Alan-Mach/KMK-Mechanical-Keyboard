@@ -29,27 +29,47 @@ The budget also meant that my keyboard layout should use as many standard keys a
 With these considerations, I went on to making my keyboard layout.
 
 ## Layouts
-My layout was designed on the aptly-named website [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/). This will allow me to experiment with as many layouts as I can digitally before I commit to one physically. 
+My layout was designed on the aptly-named website [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/). This will allow me to experiment with as many layouts as I can digitally before I commit to one physically. At the same time as making the layouts, I was also considering the parts I would have to get and how I would have to design the case in order to make the layout possible. These considerations will be reflected in the keyboard layout screenshots.
+
+### Version 1
 I started with an ANSI 104 preset as a base to make changes from (the keyboard layout most people think of). 
 
-### v1
-Since a big feature of my keyboard is the left-hand numpad, I first moved the entire numpad and navigation keys to the other side. At this point in the process, I wanted the keyboard to have a windows where you could see the pcb through, so I made a new key in the layout the same size as the Pi Pico to figure out where it could go. Additionally, since I wanted media keys, I also added 3 custom media keys of Mute, Volume Down, and Volume Up (they are in that order because that's the order they are in on my current keyboard). 
+Since a big feature of my keyboard is the left-hand numpad, I first moved the entire numpad and navigation keys to the other side. At this point in the process, I wanted the keyboard to have a windows where you could see the pcb aand wiring through, so I made a new key in the layout the same size as the Pi Pico to figure out where it could go. 
 
-By default, the standard full-size layout needs 27 pins, but the Pi Pico has only 25 available. Since the entire numpad is needed, the navigation keys have to go, and the keys remaining have to be repositioned to reduce the number of columns (you can't remove rows since each row has too many keys). This isn't a big problem since no one actually uses keys like ScrollLock or PauseBreak anymore, and keys like PageUp and Down aren't used by me, so I elected to remove them. The remaining keys were organized into a column
+Additionally, since I wanted media keys, I also added 3 custom media keys of Mute, Volume Down, and Volume Up (they are in that order because that's the order they are in on my current keyboard) above the numpad. This was the only place that had space for more keys, but since there was space for a 4th key, I added the Print Screen key because I used it often. 
+
+By default, the standard full-size layout needs 27 pins, but the Pi Pico has only 25 available. Since the entire numpad is needed, the navigation keys have to go, and the keys remaining have to be repositioned to reduce the number of columns (you can't remove rows since each row has too many keys). This isn't a big problem since no one actually uses keys like ScrollLock or PauseBreak anymore, and keys like PageUp and Down aren't used by me, so I elected to remove them. The remaining keys were organized into a column.
 
 Next, I added the split into the keyboard. There is already a split keyboard layout within the hobby, the Alice layout. I chose not to use it since it requires 2 'B' keys and the crack half-way on each side left an unsightly gap; I couldn't have that, so my version will angle the entirety of each side by a single angle. Based on the standard touch-typing hand placement, the keys were split based on which keys *should* be pressed by the left and right hands. Both sides were then rotated to 6 degrees and spread apart. Since the right side had more keys, its keys ended up lower than the left side when looking at the middle most keys. This serendipitous as the uneven line-up allowed the keys to snuggle up closer to gether and reduce the split gap. Since the spacebar can't be broken, it had to be in the middle and have no angle. It also had to be lowered to accomodate the angling of the keys.
 
-The split left a large gap between the spacebar and the alt keys
+The split left a large gap between the spacebar and the alt keys, which I didn't think looked that great, so I nudged the left control keys over. This change also made space for the directional keys to be placed on the left; it will also be angled to fit in bettter with the overall look of the keyboard. 
+
+The result is the first keyboard layout:
+![Layout 1](keyboard_layouts/images/Keyboard_Layout_v1.png)
+
+The coloring of the keys was to match a keycap set I had been considering for this build. I was testing to see how well the colors might look in the final product.
+
+Takeaways from this layout:
+* The numpad side is good enough. There is little that can be changed in the numpad, such as mirroring the keys to fit left hands. However, I decided not to change anything since the arrow sublegends of the 4 and 6 keys would no longer be pointing in the right directions, limiting keycap compatibility.
+* The function row had to be changed. Some keycap sets split the function row into 3 groups and alternate key colors between them. This layout would make the F5-F8 keys split when they should be group together as the same color. The F5 and F6 keys were also at different heights, which bothered me.
+* There is too much empty space below the Pi Pico, and adding another key wouldn't fit well, so the over layout had to be rethought out.
+* The Insert and F12 keys didn't line up with the with the rest of the rows and colums because it would interfere with the angle of the keys. I felt like there could be a better solution around that issue.
+* There would be enough pins on the Pi Pico if it weren't for the left arrow key. It's wiring could be squished into another column to accomodate, but the wiring would get messy, so I wanted to find an alternative layout solution.
 
 prioritozed compact layout over keycap compatability due to microcontroller pins
 
-![Layout 1](Keyboard_Layout_v1.png)
+### Version 2
 
-![Layout 2](Keyboard_Layout_v2.png)
 
-![Layout 3](Keyboard_Layout_v3.png)
+![Layout 2](keyboard_layouts/images/Keyboard_Layout_v2.png)
 
-![Layout 4](Keyboard_Layout_v4.png)
+### Version 3
+It was at this point when I decided to pivot in my design direction for my keyboard
+
+![Layout 3](keyboard_layouts/images/Keyboard_Layout_v3.png)
+
+### Version 4
+![Layout 4](keyboard_layouts/images/Keyboard_Layout_v4.png)
 
 # 2. Finding Parts
 After watching many handwired keyboard videos, I have determined the minimum list of parts that I need:
