@@ -43,13 +43,13 @@ The split left a large gap between the spacebar and the alt keys
 
 prioritozed compact layout over keycap compatability due to microcontroller pins
 
-![Layout 1](keyboard layouts/images/Keyboard_Layout_v1.png)
+![Layout 1](Keyboard_Layout_v1.png)
 
-![Layout 2](keyboard layouts/images/Keyboard_Layout_v2.png)
+![Layout 2](Keyboard_Layout_v2.png)
 
-![Layout 3](keyboard layouts/images/Keyboard_Layout_v3.png)
+![Layout 3](Keyboard_Layout_v3.png)
 
-![Layout 4](keyboard layouts/images/Keyboard_Layout_v4.png)
+![Layout 4](Keyboard_Layout_v4.png)
 
 # 2. Finding Parts
 After watching many handwired keyboard videos, I have determined the minimum list of parts that I need:
