@@ -26,6 +26,8 @@ With the budget set in mind, the microcontroller was already decided for me; it 
 
 The budget also meant that my keyboard layout should use as many standard keys as possible. Any exotic keyshapes meant a more expensive keycap set to accomodate them. Since I wanted a split keyboard, my layout could not be a standard Alice layout, since its split space bar and two 'B' keys was hard to find among the cheapest keycap sets (this space bar requirement will cause a lot of problems down the line). It also had the characteristic of making any keyboard using its layout very long, which wouldn't work well with my length requirement.
 
+Another problem is that I expect this keyboard to be quite thick because handwiring is generally thicker than a pcb, so reducing the thickness as much as possible will be a challenge.
+
 With these considerations, I went on to making my keyboard layout.
 
 ## Layouts
@@ -34,7 +36,7 @@ My layout was designed on the aptly-named website [Keyboard Layout Editor](http:
 ### Version 1
 I started with an ANSI 104 preset as a base to make changes from (the keyboard layout most people think of). 
 
-Since a big feature of my keyboard is the left-hand numpad, I first moved the entire numpad and navigation keys to the other side. At this point in the process, I wanted the keyboard to have a windows where you could see the pcb aand wiring through, so I made a new key in the layout the same size as the Pi Pico to figure out where it could go. 
+Since a big feature of my keyboard is the left-hand numpad, I first moved the entire numpad and navigation keys to the other side. At this point in the process, I wanted the keyboard to have a windows where you could see the pcb aand wiring through, so I made a new key in the layout the same size as the Pi Pico to figure out where it could go. In addition to looking impressive, it would also make the keyboard thinner since the Pi Pico would not be vertically stacked under key switches.
 
 Additionally, since I wanted media keys, I also added 3 custom media keys of Mute, Volume Down, and Volume Up (they are in that order because that's the order they are in on my current keyboard) above the numpad. This was the only place that had space for more keys, but since there was space for a 4th key, I added the Print Screen key because I used it often. 
 
@@ -51,20 +53,28 @@ The coloring of the keys was to match a keycap set I had been considering for th
 
 Takeaways from this layout:
 * The numpad side is good enough. There is little that can be changed in the numpad, such as mirroring the keys to fit left hands. However, I decided not to change anything since the arrow sublegends of the 4 and 6 keys would no longer be pointing in the right directions, limiting keycap compatibility.
+* The spacebar must also be kept, no matter how bad it looks. This is because it's exceptionally harder to find Alice layout-compatible keycap sets compared to any other special keycap needs.
 * The function row had to be changed. Some keycap sets split the function row into 3 groups and alternate key colors between them. This layout would make the F5-F8 keys split when they should be group together as the same color. The F5 and F6 keys were also at different heights, which bothered me.
-* There is too much empty space below the Pi Pico, and adding another key wouldn't fit well, so the over layout had to be rethought out.
+* There is too much empty space below the Pi Pico, and adding another key wouldn't fit well, so the overall layout had to be reconsidered.
 * The Insert and F12 keys didn't line up with the with the rest of the rows and colums because it would interfere with the angle of the keys. I felt like there could be a better solution around that issue.
 * There would be enough pins on the Pi Pico if it weren't for the left arrow key. It's wiring could be squished into another column to accomodate, but the wiring would get messy, so I wanted to find an alternative layout solution.
+* The vertical arrangement of the Insert to End keys makes it harder to find keycap sets because sculpted keycaps won't match properly. I don't expect this to be a big problem because the popularity if the 65% layout, which also uses the same vertical arrangement, means more and more keycap sets accomodate this.
 
 prioritozed compact layout over keycap compatability due to microcontroller pins
 
 ### Version 2
-
+Version 2 was only a slight change from the first: splitting the function row into 3 groups. I removed the rotation of the middle function keys, grouped them together, and centered them between the other 2 groups. 
 
 ![Layout 2](keyboard_layouts/images/Keyboard_Layout_v2.png)
 
+I like this version a bit more because my main concern was now gone, and it makes the unbroken spacebar stand out less and rounds out the overall design. The rest of the other criticisms weren't addressed though. 
+
 ### Version 3
-It was at this point when I decided to pivot in my design direction for my keyboard
+It was at this point when I decided to pivot in my design direction for my keyboard. I decided that the exposed wiring and window into the Pi Pico was too ambitious for a first keyboard because it would be a nightmare to wire while still looking good and the green color of the pcb would be harder to color coordinate with other keycap sets (if I ever wanted to change keycaps). The window would also be harder to design in CAD, and I would need acrylic, which would make the build unnecessarily expensive. This would make the keyboard thicker, but I thought it could be remedied by slanting the keyboard so that it is thinner in the front while the back is thick enough for the Pi Pico.
+
+Without the Pi Pico, there would be a large gap between the numpad and navigation keys, which had to be fixed. After much consideration, I came to the conclusion that I couldn't make a good layout with the navigation keys also being on the left while staying within the gpio pin limit, so I moved the keys to the right. I no longer consider this layout a "true southpaw", but it had to be done. The new main section began to resemble a traditional 65% layout with a shrunken 1.75u shift. I only accepted this change because 1.75u shift keycaps are actually relatively common for mechanical keycap sets. 
+
+In the previous layout, the numpad worked well not having to be angled. Because it was so far over to the left of the keyboard, your hands would not have to angle inward to use it, eliminating the need for an angle. Now that that there is a giant gap, the only way to fill it would be to angle the numpad and align it with the rest of the left side.
 
 ![Layout 3](keyboard_layouts/images/Keyboard_Layout_v3.png)
 
@@ -74,14 +84,14 @@ It was at this point when I decided to pivot in my design direction for my keybo
 # 2. Finding Parts
 After watching many handwired keyboard videos, I have determined the minimum list of parts that I need:
 1. micro-controller (which has already been decided as a Pi Pico)
-2. 104 switches (based on the planned layout)
+2. 104 switches (based on the intended keyset)
 3. at least 104 1N4148 diodes
-4. 7 plate-mount stabilizers (6 2u and 1 6.25u)
+4. 7 plate-mount stabilizers (6, 2u, and 1 6.25u)
 5. keycaps (with a 1.75u spacebar and at least 3 bonus/media keys)
 6. 22 gauge copper wire (at least 300ft)
 7. Any extra tools needed to build the keyboard
 
-Most of these parts will be bought on Amazon for meet their free shipping purchase requirement. 
+These parts are mostly agnostic to keyboard layout, so the parts list can be considered before or at the same time as the keyboard layout design. Most of these parts will be bought on Amazon for meet their free shipping purchase requirement. 
 
 The most important part of the keyboard is the switch, which can also be the most expensive part. This was especially true since I would be sourcing 104 switches. Therefore, my first order of business was to find the best value switch availabe on the market. Sound quality was an initial consideration, but I eventually dismissed it since it wasn't a priority, and finding good switches was a role better suited to a future keyboard design. I eventually found the Keychron K Pro switches, which came in a set of 110 switches for $16. Even after considering the shipping costs, its price per switch is still lower than any other switch on the market. This isn't even considering the fact that they came factory lubed, which will save hours of work. Since there were multiple colors to choose from, I chose brown because people who are unfamiliar with mechanical keyboards (me) generally prefer them. The only place to buy these are on Keychorn's official website, so that's where I purchased them.
 
@@ -93,12 +103,12 @@ My layout will need a 1.75U shift, which isn't a standard key, but it is common 
 
 Next is 22 gauge copper wire. I need this gauge specifically since I will be using 3d printed hotswap sockets designed for this diameter. Honestly any wire will work. I only used copper because I intended to solder with it, but you will see later that that will not be the case. Without looking I bought some craft wire from the art store. This ended up being a monumental mistake that set my project back a year (due to school). Instead, you should just find an old ethernet cable with **solid-core** wire and strip them manually with wire strippers. It takes some time, but you can usually find those cables for free. It took me two tries to find a cable with solid core wire. I ended up actually needing the cable with stranded wire, but I could get away with just one if I were to do this project again.
 
-To build the keyboard will also need extra parts. I couldn't predict them in advance, so I just bought what I needed as I needed them. The final list of things I *actually* used is:
+To build the keyboard will also need extra parts. I couldn't predict them in advance, so I just bought what I needed as I needed them. The final list of things I *actually* used were:
 1. wire strippers
 2. mechanical switch puller
 3. keycap puller (most sets come with one, like mine)
 4. 3d printer and filament (this is expensive, but it's a given that you already have this if you are pursuing this project)
 5. silicone caulk
-6. M3 screws
+6. M3 screws, nuts and scredriver
 7. sandpaper
 8. superglue
