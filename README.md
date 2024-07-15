@@ -74,7 +74,7 @@ It was at this point when I decided to pivot in my design direction for my keybo
 
 Without the Pi Pico, there would be a large gap between the numpad and navigation keys, which had to be fixed. After much consideration, I came to the conclusion that I couldn't make a good layout with the navigation keys also being on the left while staying within the gpio pin limit, so I moved the keys to the right. I no longer consider this layout a "true southpaw", but it had to be done. The new main section began to resemble a traditional 65% layout with a shrunken 1.75u shift. I only accepted this change because 1.75u shift keycaps are actually relatively common for mechanical keycap sets. 
 
-In the previous layout, the numpad worked well not having to be angled. Because it was so far over to the left of the keyboard, your hands would not have to angle inward to use it, eliminating the need for an angle. Now that that there is a giant gap, the only way to fill it would be to angle the numpad and align it with the rest of the left side.
+In the previous layout, the numpad worked well not having to be angled because it was so far over to the left of the keyboard; your hands would not have to angle inward to use it, eliminating the need for an angle. Now that that there is a giant gap, the only way to fill it would be to angle the numpad and align it with the rest of the left side. The added angle shouldn't be enough of a problem for the ergonimics, but
 
 ![Layout 3](keyboard_layouts/images/Keyboard_Layout_v3.png)
 
@@ -104,11 +104,16 @@ My layout will need a 1.75U shift, which isn't a standard key, but it is common 
 Next is 22 gauge copper wire. I need this gauge specifically since I will be using 3d printed hotswap sockets designed for this diameter. Honestly any wire will work. I only used copper because I intended to solder with it, but you will see later that that will not be the case. Without looking I bought some craft wire from the art store. This ended up being a monumental mistake that set my project back a year (due to school). Instead, you should just find an old ethernet cable with **solid-core** wire and strip them manually with wire strippers. It takes some time, but you can usually find those cables for free. It took me two tries to find a cable with solid core wire. I ended up actually needing the cable with stranded wire, but I could get away with just one if I were to do this project again.
 
 To build the keyboard will also need extra parts. I couldn't predict them in advance, so I just bought what I needed as I needed them. The final list of things I *actually* used were:
-1. wire strippers
-2. mechanical switch puller
-3. keycap puller (most sets come with one, like mine)
-4. 3d printer and filament (this is expensive, but it's a given that you already have this if you are pursuing this project)
-5. silicone caulk
+1. Wire strippers
+2. Mechanical switch puller
+3. Keycap puller (most sets come with one, like mine)
+4. 3d printer and filament (this is expensive, but it's assumed that you already have this if you are pursuing this project)
+5. Silicone caulk
 6. M3 screws, nuts and scredriver
-7. sandpaper
-8. superglue
+7. Sandpaper
+8. Superglue
+9. Aluminum foil
+10. Masking tape
+11. 1 Band-Aid
+
+# 3. Designing the Keyboard (Part 1)
